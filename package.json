@@ -4,7 +4,9 @@
   "description": "A JSON API service that aggregates Website Torrent links (currently only compatible with Maelstrom browser), and allows you to search/sort/tag",
   "main": "app.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha"
+    "test": "./node_modules/semistandard/bin/cmd.js && ./node_modules/istanbul/lib/cli.js cover _mocha --",
+    "develop": "DEBUG=true ./node_modules/nodemon/bin/nodemon.js app.js",
+    "start": "./node_modules/forever/bin/forever app.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +31,20 @@
     "chai": "^2.2.0",
     "istanbul": "^0.3.13",
     "mocha": "^2.2.4",
-    "semistandard": "^4.0.3"
+    "semistandard": "^4.0.3",
+    "stack-trace": "0.0.9"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "colors": "^1.0.3",
+    "crypto": "0.0.3",
+    "forever": "^0.14.1",
+    "jwt-simple": "^0.3.0",
+    "lodash": "^3.6.0",
+    "moment": "^2.10.2",
+    "mongoose": "^4.0.1",
+    "passport": "^0.2.1",
+    "passport-local": "^1.0.0",
+    "restify": "^3.0.2"
   }
 }
